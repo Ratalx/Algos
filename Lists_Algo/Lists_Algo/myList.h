@@ -17,3 +17,7 @@ void LBubleSort(node *&h);
 void ListReverse(node *&h);
 void CopyAfter(node *&h);
 void AddSort(node*&h, int x);
+void CopyifGX(node* &head, int x);
+void myReversList(node *&h);
+void CopyAfterRev(node*&h);
+void SwapMinMax(node*&h);

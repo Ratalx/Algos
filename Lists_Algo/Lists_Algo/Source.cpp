@@ -1,34 +1,35 @@
 #include<iostream>
+#include<ctime>
+#include<string>
 #include"myList.h"
 #include"Sort.h"
 #include"myBST.h"
-using namespace std;
 string cr, cl, cp;
 void printBT(string sp, string sn, BSTNode * v);
 int main()
 {
+	srand(time(NULL));
 	cr = cl = cp = "  ";
 	cr[0] = 218; cr[1] = 196;
 	cl[0] = 192; cl[1] = 196;
 	cp[0] = 179;
 	BSTNode *root = NULL;
 	int i, k;
-	InsertBST(root, 10);
-	for (int i = 0; i < 20; ++i)
+	myInsertBST(root, 25);
+	myInsertBST(root, 19);
+	for (i = 0; i < 10; ++i)
 	{
-		k = i;
-		cout << k << " ";
-		InsertBST(root, k);
+		myInsertBST(root, rand() % 50 + 1);
 	}
-
-
 	cout << "\n\n";
 	printBT("", "", root);
-	DFSRelease(root);
+	cout << "\n\n";
+	RightRotate(root,root->right);
+	cout << "\n\n";
+	printBT("", "", root);
 	system("pause");
 	return 0;
 }
-
 
 
 void printBT(string sp, string sn, BSTNode * v)
@@ -49,6 +50,7 @@ void printBT(string sp, string sn, BSTNode * v)
 		printBT(s + cp, cl, v->left);
 	}
 }
+
 
 
 //

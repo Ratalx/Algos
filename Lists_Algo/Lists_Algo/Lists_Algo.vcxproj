@@ -110,14 +110,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="myBST.cpp" />
+    <ClCompile Include="SomeBST.cpp" />
     <ClCompile Include="myList.cpp" />
+    <ClCompile Include="myBST.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="myBST.h" />
+    <ClInclude Include="SomeBST.h" />
     <ClInclude Include="myList.h" />
+    <ClInclude Include="myBST.h" />
     <ClInclude Include="Sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

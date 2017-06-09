@@ -1,5 +1,4 @@
 #include<iostream>
-#include<string>
 using namespace std;
 struct BSTNode {
 	BSTNode * parent;
@@ -7,9 +6,17 @@ struct BSTNode {
 	BSTNode * left;
 	int val;
 };
-void InsertBST(BSTNode*& root, int x);
-void DFSRelease(BSTNode*& root);
-BSTNode* minBST(BSTNode*&root);
-BSTNode* nextBST(BSTNode *root); /*szukanie nastepnika*/
-BSTNode* predBST(BSTNode *root);
-BSTNode* MaxBST(BSTNode *root);
+void myInsertBST(BSTNode* &root, int x);
+void DFSDelete(BSTNode* &root);
+void preorder(BSTNode* root);
+void inorder(BSTNode* root);
+void postorder(BSTNode* root);
+void norder(BSTNode* root);
+void DestroyLeafts(BSTNode* &root);
+BSTNode * BSTSearch(BSTNode * root, int x);
+BSTNode * BSTSearchRekurs(BSTNode*root, int x);
+BSTNode* Nastepnik(BSTNode*root);
+BSTNode * Poprzednik(BSTNode * root);
+void DeleteSubtr(BSTNode* &root);
+void RightRotate(BSTNode*&root,BSTNode * A);
+void LeftRotate(BSTNode*&root, BSTNode*A);

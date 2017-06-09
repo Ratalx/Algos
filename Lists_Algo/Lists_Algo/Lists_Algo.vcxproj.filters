@@ -24,6 +24,9 @@
     <ClCompile Include="Sort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SomeBST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="myBST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SomeBST.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="myBST.h">

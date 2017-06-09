@@ -1,7 +1,8 @@
 ﻿  Source.cpp
-k:\algo\list\lists_algo\lists_algo\source.cpp(11): warning C4309: '=': truncation of constant value
-k:\algo\list\lists_algo\lists_algo\source.cpp(12): warning C4309: '=': truncation of constant value
+k:\algo\list\lists_algo\lists_algo\source.cpp(11): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 k:\algo\list\lists_algo\lists_algo\source.cpp(13): warning C4309: '=': truncation of constant value
-k:\algo\list\lists_algo\lists_algo\source.cpp(15): warning C4101: 'i': unreferenced local variable
+k:\algo\list\lists_algo\lists_algo\source.cpp(14): warning C4309: '=': truncation of constant value
+k:\algo\list\lists_algo\lists_algo\source.cpp(15): warning C4309: '=': truncation of constant value
+k:\algo\list\lists_algo\lists_algo\source.cpp(17): warning C4101: 'k': unreferenced local variable
   Lists_Algo.vcxproj -> K:\Algo\List\Lists_Algo\Debug\Lists_Algo.exe
   Lists_Algo.vcxproj -> K:\Algo\List\Lists_Algo\Debug\Lists_Algo.pdb (Partial PDB)

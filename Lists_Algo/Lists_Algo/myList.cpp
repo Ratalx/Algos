@@ -157,14 +157,19 @@ void DelNAfterX(node *& h, int x,int n)
 }
 void LBubleSort(node *&h)
 {
-	Add(h, 0);
 	node * p = h;
 	node * temp = h;
+	node * nu = NULL;
 	bool swap = true;
 	while (swap)
 	{	
-		p = h;
 		swap = false;
+		p = h;
+		if (p->val > p->next->val)
+		{
+			SWAP(h, nu);
+			swap = true;
+		}
 		while (p != NULL&&p->next != NULL&&p->next->next)
 		{
 			if (p->next->val > p->next->next->val)
@@ -176,7 +181,6 @@ void LBubleSort(node *&h)
 			else p = p->next;
 		}
 	}
-	Delete(h);
 	
 }
 void ListReverse(node *&h)//funckja dziala na zasadzie wrzucania na poczatek listy kolejnych elementow 
@@ -257,4 +261,108 @@ void AddSort(node*&h, int x)
 		}
 	}
 }
+void CopyifGX(node* &h, int x)
+{
+	if (h)														//sprawdzamy czy pusta
+	{							
+		node *p=h;
+		while (p == h)											//jesli jest na headzie i kilka elementow po kolei bedzie mniejszych od x 
+		{
+			if (p->val < x)
+			{
+				Delete(h);										//usuwamy w headzie i zmieniamy p =nowe h
+				p = h;
+			}
+			else
+			{
+				Add(p->next, p->val);							//dodajemy elemnt i za niego przesuwamy sie	na niego	
+				p = p->next;
+			}
+		}
+		while (p->next)											//przechodzmimy przez liste
+		{
+			if (p->next->val < x)								
+			{
+					node *temp = p->next;
+					p->next = temp->next;						//usuwamy przy okazji modyfikujac wskaznik
+					delete temp;
+			}
+			else
+			{
+				p=p->next;									//przesuwamy sie na element ktory sprawdzilismy
+				Add(p->next, p->val);						// dodajemy nowy element i przesuwamy sie na niego
+				p = p->next;
+			}
+		}
+	}
+}
+void myReversList(node *&h)
+{
+	if (h)
+	{
+		node *p = h;
+		while (p->next)
+		{
+			node *temp = p->next;
+			p->next = temp->next;
+			temp->next = h;
+			h = temp;
 
+		}
+	}
+}
+void CopyAfterRev(node*&h)
+{
+	node*p = h;
+	node * temp = NULL;
+	while (p->next)
+	{
+		Add(temp, p->val);
+		p = p->next;
+	}
+	Add(temp, p->val);
+	p->next = temp;
+
+}
+void SwapMinMax(node*&h)
+{
+	if (h)
+	{
+		node*p = h;
+		node *pmax = new node;
+		node *pmin = new node;
+		pmax->next = h;
+		pmin->next = h;
+		while (p->next)
+		{
+			if (p->next->val > pmax->next->val)
+				pmax = p;
+			if (p->next->val < pmin->next->val)
+				pmin = p;
+			p=p->next;
+		}
+		if (pmax == pmin->next)
+		{
+			node*temp = pmin->next;
+			pmin->next = temp->next;
+			temp->next = pmin->next->next;
+			pmin->next->next = temp;
+		}
+		else if (pmin == pmax->next)
+		{
+			node* temp = pmax->next;
+			pmax->next = temp->next;
+			temp->next = pmax->next->next;
+			pmax->next->next = temp;
+		}
+		else
+		{
+			node *min = pmin->next;
+			node *amax = pmax->next->next;
+			pmax->next = min->next;
+			pmin->next = pmax->next;
+			pmax->next = min;
+			min->next = amax;
+		}
+	}
+}
